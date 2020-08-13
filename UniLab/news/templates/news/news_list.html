@@ -1,0 +1,119 @@
+{% extends 'core/base.html' %}
+{% block home %}{% url 'home' %}{% endblock %}
+{% block about %}{% url 'home' %}#about{% endblock %}
+{% block courses %}{% url 'courses:courses' %}{% endblock %}
+{% block news %}#news{% endblock %}
+{% block homef %}{% url 'home' %}{% endblock %}
+{% block aboutf %}{% url 'home' %}#about{% endblock %}
+{% block coursesf %}{% url 'courses:courses' %}{% endblock %}
+{% block newsf %}#news{% endblock %}
+{% load static %}
+{% block content %}
+    
+        <!-- bradcam_area_start -->
+        <div class="bradcam_area breadcam_bg overlay2">
+                <h3>Noticias</h3>
+            </div>
+            <!-- bradcam_area_end -->
+
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding" id="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        {% load news_extras %}
+			            {% get_news_list as news_list %}
+			            {% for news in news_list|slice:3 %}
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{{ news.imageNews.url}}" alt="">
+                                <a href="{% url 'news:news' news.id news.title|slugify %}" class="blog_item_date">
+                                    <h3>{{news.created|date:"d"}}</h3>
+                                    <p>{{news.created|date:"F"}}</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="{% url 'news:news' news.id news.title|slugify %}">
+                                    <h2>{{news.title}}</h2>
+                                </a>
+                                <p>{{news.subtitle}}</p>
+                            </div>
+                        </article>
+            {% endfor %}
+
+                        <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Categorías</h4>
+                            <ul class="list cat-list">
+                            {% get_categories_list as categories_list %}
+                            {% for category in categories_list %}
+                                <li>
+                                    <a href="{% url 'news:categories' category.id category.name|slugify %}" class="d-flex">
+                                        <p>{{category.name}}</p>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        </aside>
+
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Noticias recientes</h3>
+                            {% get_news_list as news_list %}
+			                {% for news in news_list|slice:3 %}
+                            <div class="media post_item">
+                                <img style="max-height: 55px;" src="{{news.imageNews.url}}" alt="post">
+                                <div class="media-body">
+                                    <a href="{% url 'news:news' news.id news.title|slugify %}">
+                                        <h3>{{news.title}}</h3>
+                                    </a>
+                                    <p>{{news.created|date:"d"}} de {{news.created|date:"F"}}, {{news.created|date:"Y"}}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </aside>
+                        <aside class="single_sidebar_widget tag_cloud_widget">
+                            <h4 class="widget_title">Tag Clouds</h4>
+                            <ul class="list">
+                                {% get_tags_list as tags_list %}
+                                {% for tag in tags_list %}
+                                <li>
+                                    <a href="{% url 'news:tags' tag.id tag.name|slugify %}">{{tag.name}}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+
+
+{% endblock %}

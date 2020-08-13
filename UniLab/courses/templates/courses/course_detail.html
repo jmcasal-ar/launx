@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+{% block home %}{% url 'home' %}{% endblock %}
+{% block about %}{% url 'home' %}#about{% endblock %}
+{% block courses %}{% url 'courses:courses' %}{% endblock %}
+{% block news %}{% url 'news:news_list' %}{% endblock %}
+{% block homef %}{% url 'home' %}{% endblock %}
+{% block aboutf %}{% url 'home' %}#about{% endblock %}
+{% block coursesf %}{% url 'courses:courses' %}{% endblock %}
+{% block newsf %}{% url 'news:news_list' %}#news{% endblock %}
+{% load static %}
+{% block content %}
+{% load l10n %}
+
+    
+     <!-- bradcam_area_start -->
+     <div class="courses_details_banner">
+         <div class="container">
+             <div class="row">
+                 <div class="col-xl-6 col-lg-6">
+                     <div class="course_text">
+                            <h3>{{course.title}}</h3>
+                            <div class="prise">
+                                <span class="active">US$ {{course.dollarPrice|floatformat:"0"}}</span>
+                                <br>
+                                <span class="inactive">o ${{course.pesoPrice|floatformat:"0"}} pesos args</span>
+                                <br>
+                            </div>
+                            <div class="hours">
+                                <div class="video mt-2">
+                                     <div class="single_video">
+                                            <i class="fa fa-clock-o"></i> <span>{{course.hoursDuration}} horas de duración</span>
+                                     </div>
+                                     <div class="single_video">
+                                            <i class="fa fa-play-circle-o"></i> <span>{{course.modality.all.first}}</span>
+                                     </div>
+                                   
+                                </div>
+                            </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+    <!-- bradcam_area_end -->
+    <div class="courses_details_info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7">
+                    <div class="single_courses">
+                        <h3>Objetivos</h3>
+                        <div><p>{{course.objective|safe}}</p></div>
+                        
+                    <h3 class="second_title">Programa</h3>
+                    <div><p>{{course.program|safe}}</p></div>
+
+                    </div>
+                </div>
+                <div class="col-xl-4.1 col-lg-5">
+                    <div class="courses_sidebar">
+                        <div>
+                            <a href="" style="background-image: url({{course.imageCourse.url}});" class="block21"></a>
+                        </div>
+                        <div class="author_info">
+                            <div class="auhor_header">
+                                <div class="thumb">
+                                        <img src="{{ course.professor.first.photo.url }}"  class="rounded-circle align-items-end" style="width:60px;" alt="">
+                                </div>
+                                <div class="name">
+                                    <h3>{{ course.professor.first.name }}</h3>
+                                    <p>{{ course.professor.first.profession }}</p>
+                                </div>
+                            </div>
+                            <p class="text_info">
+                                {{ course.professor.first.bio|safe }}
+                            </p>
+                            <ul>
+                                <li><a href="https://twitter.com/" target="_blank"> <i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="{{ course.professor.first.linkedin}}" target="_blank"> <i class="ti-linkedin"></i> </a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="boxed_btn">Comprar Curso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
