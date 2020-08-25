@@ -25,7 +25,7 @@ SECRET_KEY = 'c^r7xqbwz*9aadnl!n)k7r7ewno^#6ucrm2cwi%yf_mc84!sie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.launx.org']
 
 
 # Application definition
@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'UniLab.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'UniLab',
-        'USER': 'postgres',
-        'PASSWORD': '36404360',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'launx',
+        'USER': 'super',
+        'PASSWORD': 'Jmca1084',
+        'HOST': 'juanmacasal1-1765.postgres.pythonanywhere-services.com',
+        'PORT': '11765',
     }
 }
 
@@ -128,6 +128,7 @@ USE_THOUSAND_SEPARATOR = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_MEDIA_ROOT = os.path.join(BASE_DIR, "static")
 
 #Media files (configuramos para q encuentre la carpeta media):
 MEDIA_URL = '/media/'

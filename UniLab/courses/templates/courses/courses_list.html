@@ -16,7 +16,7 @@
         <!-- bradcam_area_end -->
 
     <!-- popular_courses_start -->
-        <div id="courses" style="padding-bottom: 1%;">
+    <div id="courses" style="padding-bottom: 1%;">
         <br>
     </div>
     <div class="popular_courses">
@@ -76,7 +76,7 @@
                                                 <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>{{ course.categories.first.name}}</span>
+                                                <span>{{ course.tags.first.name}}</span>
                                                 {% if course.title|length < 55 %}
                                                 <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
                                                 {% else %}
@@ -87,10 +87,10 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o    
+                                                            US$ <strong>{{course.dollarPrice|floatformat:"0"}}</strong> o
                                                         </span>
                                                         <span class="active_prise">
-                                                            ${{course.pesoPrice|floatformat:"0"}} pesos args
+                                                            <strong>${{course.pesoPrice|floatformat:"0"}}</strong> pesos args
                                                         </span>
                                                     </div>
                                                 </div>
@@ -111,7 +111,7 @@
                                                 <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>{{ course.categories.first|join:", "}}</span>
+                                                <span>{{ course.categories.name }}</span>
                                                 {% if course.title|length < 55 %}
                                                 <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
                                                 {% else %}
@@ -122,7 +122,7 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o    
+                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
                                                         </span>
                                                         <span class="active_prise">
                                                             ${{course.pesoPrice|floatformat:"0"}} pesos args
@@ -132,10 +132,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% endif %}
+                                    {% endif %}
                                 {% endfor %}
                                 </div>
                     </div>
+
                     <div class="tab-pane fade" id="programacion" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="row">
                                 {% get_courses_list as course_list %}
@@ -149,7 +150,7 @@
                                                 </a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>{{ course.categories.first|join:", "}}</span>
+                                                <span>{{ course.categories.name }}</span>
                                                 {% if course.title|length < 55 %}
                                                 <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
                                                 {% else %}
@@ -160,7 +161,7 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o    
+                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
                                                         </span>
                                                         <span class="active_prise">
                                                             ${{course.pesoPrice|floatformat:"0"}} pesos args
@@ -170,10 +171,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% endif %}
+                                    {% endif %}
                                 {% endfor %}
                                 </div>
                     </div>
+
                     <div class="tab-pane fade" id="gestion" role="tabpanel" aria-labelledby="design-tab">
                             <div class="row">
                                 {% get_courses_list as course_list %}
@@ -185,7 +187,7 @@
                                                 <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>{{ course.categories.first|join:", "}}</span>
+                                                <span>{{ course.categories.name }}</span>
                                                 {% if course.title|length < 55 %}
                                                 <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
                                                 {% else %}
@@ -196,7 +198,7 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o    
+                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
                                                         </span>
                                                         <span class="active_prise">
                                                             ${{course.pesoPrice|floatformat:"0"}} pesos args
@@ -210,7 +212,8 @@
                                 {% endfor %}
                                 </div>
                     </div>
-                    <div class="tab-pane fade" id="historia" role="tabpanel" aria-labelledby="design-tab">
+
+                     <div class="tab-pane fade" id="historia" role="tabpanel" aria-labelledby="design-tab">
                             <div class="row">
                                 {% get_courses_list as course_list %}
                                 {% for course in course_list|slice:3 %}
@@ -221,7 +224,7 @@
                                                 <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
                                             </div>
                                             <div class="courses_info">
-                                                <span>{{ course.categories.first|join:", "}}</span>
+                                                <span>{{ course.categories.name }}</span>
                                                 {% if course.title|length < 55 %}
                                                 <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
                                                 {% else %}
@@ -232,7 +235,7 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o    
+                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
                                                         </span>
                                                         <span class="active_prise">
                                                             ${{course.pesoPrice|floatformat:"0"}} pesos args
@@ -245,6 +248,13 @@
                                 {% endif %}
                                 {% endfor %}
                                 </div>
+                    </div>
+
+
+                    <div class="col-xl-12">
+                        <div class="more_courses text-center">
+                            <a href="{% url 'courses:courses' %}" class="boxed_btn_rev">Más cursos</a>
+                        </div>
                     </div>
                 </div>
             </div>

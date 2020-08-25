@@ -2,12 +2,6 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.utils.timezone import now #Imporza libreria de fechas
 
-
-
-
-
-
-
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name="Nombre")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de Creación")
@@ -74,7 +68,7 @@ class Professor(models.Model):
     linkedin = models.URLField(verbose_name="Linkedin", max_length=200, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de Creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de Modificación")
-    
+
 
     class Meta:
         verbose_name = "profesor"
@@ -93,7 +87,7 @@ class Course(models.Model):
     url = models.URLField(max_length=200, null=True, blank=True)
     dollarPrice = models.DecimalField(max_digits=8, decimal_places=2, verbose_name="Precio en dolares", blank=True, null=True)
     pesoPrice = models.DecimalField(max_digits=8, decimal_places=2, verbose_name="Precio en pesos", blank=True, null=True)
-    modality = categories = models.ManyToManyField(ModalityCourse, verbose_name="Modalidad", related_name="get_modalities")
+    modality = models.ManyToManyField(ModalityCourse, verbose_name="Modalidad", related_name="get_modalities")
     categories = models.ManyToManyField(Category, verbose_name="Categorias", related_name="get_categories")
     tags = models.ManyToManyField(Tag, verbose_name="Tags", related_name="get_tags")
     order = models.SmallIntegerField(verbose_name="Orden", default=0)
