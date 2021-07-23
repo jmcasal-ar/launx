@@ -79,12 +79,8 @@ WSGI_APPLICATION = 'UniLab.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'launx',
-        'USER': 'super',
-        'PASSWORD': 'Jmca1084',
-        'HOST': 'juanmacasal1-1765.postgres.pythonanywhere-services.com',
-        'PORT': '11765',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

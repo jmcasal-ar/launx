@@ -46,11 +46,10 @@
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img" style="color: white;">
-                                {% comment %} <a href="{% url 'home' %}">
-                                    <img src="{% static 'core/img/logo.png' %}" alt="">
-                                </a> {% endcomment %}
-                                AQUÍ VA  UN LOGO
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="{% static 'core/img/  Marca_LA_UNX-03 (1) (2).png' %}" alt="">
+                                </a>
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-7">
@@ -66,6 +65,7 @@
                                 </nav>
                             </div>
                         </div>
+                        {% comment %}
                         <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-center">
                                 <div class="live_chat_btn">
@@ -76,6 +76,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endcomment %}
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none" style="width: 100%;"></div>
                         </div>
@@ -283,7 +284,10 @@ Copyright &copy; ACDES <script>document.write(new Date().getFullYear());</script
     <script src="{% static 'core/js/jquery.form.js' %}"></script>
     <script src="{% static 'core/js/jquery.validate.min.js' %}"></script>
     <script src="{% static 'core/js/mail-script.js' %}"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
     <script src="{% static 'core/js/main.js' %}"></script>
 </body>
 
