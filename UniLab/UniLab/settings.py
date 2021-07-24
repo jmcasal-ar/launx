@@ -25,7 +25,7 @@ SECRET_KEY = 'c^r7xqbwz*9aadnl!n)k7r7ewno^#6ucrm2cwi%yf_mc84!sie'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.launx.org']
+ALLOWED_HOSTS = ['www.launx.org', '127.0.0.1']
 
 
 # Application definition
