@@ -1,0 +1,15 @@
+.nuevoCSS1{
+    background-color: black;
+  }
+.nuevoCSS1 h3{
+      background-color: greenyellow;
+  }
+  
+.nivel2{
+    background-color: chocolate;
+}
+
+/*Fonde del carousel*/
+#nuevoCarousel{
+    background-color: none;
+}
