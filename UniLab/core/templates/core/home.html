@@ -51,12 +51,13 @@
      -->
      <div id="nuevoCarousel">
     <div id="demo" class="carousel slide row justify-content-center" data-ride="carousel">
-        <div class="col-sm-11">
+        <div class="col-sm-10">
         <!-- Indicators -->
         <ul class="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" class="active"></li>
           <li data-target="#demo" data-slide-to="1"></li>
           <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
         </ul>
       
         <!-- The slideshow -->
@@ -66,6 +67,9 @@
           </div>
           <div class="carousel-item">
             <img src="{% static 'core/img/about/Slider2.png' %}" alt="1">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'core/img/about/Slider3.png' %}" alt="1">
           </div>
           <div class="carousel-item">
             <img src="{% static 'core/img/about/Slider4.png' %}" alt="1">
@@ -94,8 +98,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-90">
-                        <h3>Sobre UNX</h3>
-                         <p>UNX es una plataforma que a través de cursos, talleres, conferencias e infoproductos<br>
+                        <h3>Sobre La UNx</h3>
+                         <p>La UNx es una plataforma que a través de cursos, talleres, conferencias e infoproductos<br>
                             ofrece en línea el conocimiento y la investigación de académicos y profesionales de las<br>
                             más prestigiosas universidades con el fin de brindar una oferta de educación masiva<br>
                             y de calidad abierta a todos los sectores de la población. Para ello ofrecemos:<br>
@@ -269,7 +273,7 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            <strong>US$ {{course.dollarPrice|floatformat:"0"}}</strong>
+                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
                                                         <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                                         <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
@@ -303,10 +307,10 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            <strong>US$ {{course.dollarPrice|floatformat:"0"}}</strong>
+                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
-                                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">
+                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -341,10 +345,10 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            <strong>US$ {{course.dollarPrice|floatformat:"0"}}</strong>
+                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
-                                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">
+                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -377,11 +381,10 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
+                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
-                                                        <span class="active_prise">
-                                                            ${{course.pesoPrice|floatformat:"0"}} pesos args
-                                                        </span>
+                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -414,11 +417,10 @@
                                                     <div class="prise">
                                                         {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
-                                                            US$ {{course.dollarPrice|floatformat:"0"}} o
+                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
-                                                        <span class="active_prise">
-                                                            ${{course.pesoPrice|floatformat:"0"}} pesos args
-                                                        </span>
+                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -441,7 +443,7 @@
     </div>
     <!-- popular_courses_end-->
 
-    <!-- subscribe_newsletter_Start -->
+    <!-- subscribe_newsletter_Start
     <div class="subscribe_newsletter">
         <div class="container">
             <div class="row">

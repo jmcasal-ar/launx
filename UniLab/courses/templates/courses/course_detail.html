@@ -19,12 +19,12 @@
                  <div class="col-xl-6 col-lg-6">
                      <div class="course_text">
                             <h3>{{course.title}}</h3>
-                            <div class="prise">
+                            {% comment %} <div class="prise">
                                 <span class="active">US$ {{course.dollarPrice|floatformat:"0"}}</span>
                                 <br>
                                 <span class="inactive">o ${{course.pesoPrice|floatformat:"0"}} pesos args</span>
                                 <br>
-                            </div>
+                            </div> {% endcomment %}
                             <div class="hours">
                                 <div class="video mt-2">
                                      <div class="single_video">
@@ -78,7 +78,7 @@
                                 <li><a href="{{ course.professor.first.linkedin}}" target="_blank"> <i class="ti-linkedin"></i> </a></li>
                             </ul>
                         </div>
-                        <a href="#" class="boxed_btn">Comprar Curso</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" class="boxed_btn">Inscribirse</a>
                     </div>
                 </div>
             </div>

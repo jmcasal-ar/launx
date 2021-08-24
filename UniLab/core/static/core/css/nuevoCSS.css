@@ -11,22 +11,18 @@
 
 /*Fonde del carousel*/
 #nuevoCarousel{
-    background-color: none;
+    
     padding-top: 93px;
-    background: #a64eee;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #a64eee 0%, #3c35ce 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #a64eee 0%, #3c35ce 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #a64eee 0%, #3c35ce 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a64eee', endColorstr='#3c35ce',GradientType=1 );
-  /* IE6-9 */
+    /*background: rgb(242,5,116);
+    background: linear-gradient(0deg, rgba(242,5,116,1) 0%, rgba(87,8,64,1) 100%, rgba(87,8,73,1) 100%);
+    */
+    background: #E6E6E6;
+    /*background: white;*/
 }
 
 #nuevoCarousel img{
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
 }
 
