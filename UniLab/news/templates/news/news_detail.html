@@ -23,7 +23,9 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="{{object.imageNews.url}}" alt="">
+                     <img class="img-fluid" src="{% if object.imageNews.url != null %}
+                     {{object.imageNews.url}}
+                     {% endif %}" alt="">
                   </div>
                   <div class="blog_details">
                      <h2>{{object.title}}
@@ -56,7 +58,9 @@
                             {% get_news_list as news_list %}
 			                {% for news in news_list|slice:3 %}
                             <div class="media post_item">
-                                <img style="max-height: 55px;" src="{{news.imageNews.url}}" alt="post">
+                                <img style="max-height: 55px;" src="{% if news.imageNews.url != null %}
+                                {{news.imageNews.url}}
+                                {% endif %}" alt="post">
                                 <div class="media-body">
                                     <a href="{% url 'news:news' news.id news.title|slugify %}">
                                         <h3>{{news.title}}</h3>

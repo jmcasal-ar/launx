@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 
-    <!-- slider_area_start 
-    
+    <!-- slider_area_start
+
     <div class="slider_area " id="home">
         <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
             <div class="container">
@@ -29,7 +29,7 @@
 
     <!-- slider_area_end -->
     <!-- Slider Alternativos -->
-    
+
     <!-- Slider Alternativo
     <div class="nuevoCSS1">
         <br>
@@ -59,7 +59,7 @@
           <li data-target="#demo" data-slide-to="2"></li>
           <li data-target="#demo" data-slide-to="3"></li>
         </ul>
-      
+
         <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -75,7 +75,7 @@
             <img src="{% static 'core/img/about/Slider4.png' %}" alt="1">
           </div>
         </div>
-      
+
         <!-- Left and right controls -->
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
           <span class="carousel-control-prev-icon"></span>
@@ -110,11 +110,11 @@
             <div class="row">
                 <div class="col-lg-4 col-sm-6 service-item">
                         <div class="service-icon">
-                            <img src="{% static 'core/img/services-icons/1.png' %}" alt="1">
+                            <img src="{% static 'core/img/services-icons/headhunting1.png' %}" alt="1">
                         </div>
                         <div class="service-content">
-                            <h4>El mejor material audiovisual</h4>
-                            <p>A través de nuestro campus virtual te ofrecemos todo el material de estudio incluido, incluyendo videos, libros y aplicaciones adaptados a cada curso.</p>
+                            <h4>Insertate en el mercado laboral</h4>
+                            <p>Adquiere nuevas habilidades, herramientas y conocimientos para impulsar tu carrera y acceder a nuevas oportunidades laborales.</p>
                         </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 service-item">
@@ -131,7 +131,7 @@
 						<img src="{% static 'core/img/services-icons/3.png' %}" alt="1">
 					</div>
 					<div class="service-content">
-						<h4>Certificá tus capacidades</h4>
+						<h4>Certificado por CETCOT - UBA</h4>
 						<p>Una vez aprobado el curso, te enviaremos un certificado de finalización como comprobante de tus logros .</p>
 					</div>
 				</div>
@@ -488,15 +488,17 @@
             <div class="row">
             {% load news_extras %}
 			{% get_news_list as news_list %}
-			{% for news in news_list|slice:3 %}
+			{% for news in news_list|dictsortreversed:"published"|slice:3 %}
                 <div class="col-xl-4 col-md-4">
                     <div class="single_latest_blog">
                         <div class="thumb">
-                            <img src="{{ news.imageNews.url }}" alt="">
+                            <img src="{% if news.imageNews.url != null %}
+                            {{ news.imageNews.url }}
+                            {% endif %}" alt="">
                         </div>
                         <div class="content_blog">
                             <div class="date">
-                                <p>{{news.created|date:"d"}} de  {{news.created|date:"F"}} de {{news.created|date:"Y"}}</p>
+                                <p>{{news.published|date:"d"}} de  {{news.published|date:"F"}} de {{news.published|date:"Y"}}</p>
                             </div>
                             <div class="blog_meta">
                                 <h3><a href="{% url 'news:news' news.id news.title|slugify %}">{{news.title}}</a></h3>

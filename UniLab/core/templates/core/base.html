@@ -32,10 +32,10 @@
     <link rel="stylesheet" href="{% static 'core/css/slicknav.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/nuevoCSS.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-    
-    
-    
-    
+
+
+
+
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="col-xl-9 col-lg-9 d-lg-block">
-        
+
         <a target="_blank" href="https://wa.me/5491131121084">
             <i class=" redes fa fa-whatsapp"></i>
         </a>
@@ -99,7 +99,7 @@
         <a target="_blank" href="https://wa.me/5491131121084">
             <i class="redes fa fa-instagram"></i>
         </a>
-    
+
     </div>
 </div>
 </div>
@@ -115,9 +115,16 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{% block home %}#home{% endblock %}">Inicio</a></li>
-                                        <li><a href="{% block about %}#about{% endblock %}">Nosotros</a></li>
+                                        <li><a href="{% block about %}#about{% endblock %}">Nosotros <i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="https://www.launx.org/news/4/manifiesto/">Manifiesto</a></li>
+                                                <li><a href="https://www.launx.org/news/5/equipo/">Equipo</a></li>
+                                                <li><a href="https://www.launx.org/news/6/aliados/">Aliados</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="{% block courses %}#courses{% endblock %}">Cursos</a></li>
                                         <li><a href="{% block news %}#news{% endblock %}">Noticias</a></li>
+                                        <li><a href="https://www.launx.org/news/7/becas/">Becas</a></li>
                                         <li><a target="_blank" href="{% block contact %}https://campus.launx.org/{% endblock %}">Campus</a></li>
                                     </ul>
                                 </nav>
@@ -125,12 +132,12 @@
                         </div>
                         <br>
 
-                        
-                        
-                    
-                        
-                    
-                        
+
+
+
+
+
+
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -139,9 +146,9 @@
             </div>
         </div>
     </header>
-    
+
     <!-- header-end -->
-    
+
 
     <!-- Contenido -->
     {% block content %}{% endblock %}
