@@ -57,6 +57,7 @@
     <div id="paymentDetails">
       <div id="mercadoPagoDetails" class="paymentMethodDetails">
         <p>Precio: ${{course.pesoPrice}} pesos</p>
+        <p>Con Mercado Pago, podrás pagar con tarjeta de crédito, tarjeta de débito y efectivo</p>
         <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
 data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="button">
 </script>
@@ -72,6 +73,7 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
 
       <div id="paypalDetails" class="paymentMethodDetails">
         <p>Precio: ${{course.dollarPrice}} dólares</p>
+        <p>Con PayPal, podrás pagar con tarjeta de crédito, tarjeta de débito, efectivo y saldo virtual desde cualquier parte del mundo</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick">
           <input type="hidden" name="hosted_button_id" value="Z8KH4E6PNUZ26">
@@ -81,51 +83,52 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       </div>
 
       <div id="transferenciaDolaresDetails" class="paymentMethodDetails">
-        <p>Precio: ${{course.dollarPrice}}dólares (10% de descuento)</p>
-        <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
-        <p>Banco: XXX</p>
-        <p>Titular: XXX</p>
-        <p>SWIFT/BIC: XXX</p>
-        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+        <p>Precio: ${{course.dollarPrice}} dólares (10% de descuento)</p>
+        <p>Realiza una transferencia a la siguiente cuenta bancaria de Wise:</p>
+        <p>Titular: Juan Manuel Casal</p>
+        <p>SWIFT/BIC: CMFGUS33</p>
+        <p>Número de cuenta: 8312902213</p>
       </div>
 
       <div id="transferenciaEurosDetails" class="paymentMethodDetails">
-        <p>Precio: XXX euros</p>
-        <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
-        <p>Banco: XXX</p>
-        <p>Titular: XXX</p>
-        <p>IBAN: XXX</p>
-        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+        <p>Precio: {{course.dollarPrice}} euros</p>
+        <p>Realiza una transferencia a la siguiente cuenta bancaria de Wise:</p>
+        <p>Titular: Juan Manuel Casal</p>
+        <p>IBAN: XBE88 9675 5732 1041XX</p>
+        <p>SWIFT/BIC: TRWIBEB1XXX</p>
       </div>
 
       <div id="transferenciaBitcoinDetails" class="paymentMethodDetails">
-        <p>Precio: XXX BTC</p>
-        <p>Realiza una transferencia a la siguiente dirección de Bitcoin:</p>
-        <p>Dirección: XXX</p>
-        <button class="btn btn-primary">Realizar Transferencia en Bitcoin</button>
+        <p>Precio: 0,00066 BTC</p>
+        <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
+        <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
+        <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
 
       <div id="transferenciaEtheriumDetails" class="paymentMethodDetails">
-        <p>Precio: XXX ETH</p>
+        <p>Precio: 0,011 ETH</p>
         <p>Realiza una transferencia a la siguiente dirección de Etherium:</p>
-        <p>Dirección: XXX</p>
-        <button class="btn btn-primary">Realizar Transferencia en Etherium</button>
+        <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
+        <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
 
       <div id="transferenciaUSDTDetails" class="paymentMethodDetails">
-        <p>Precio: XXX USDT</p>
+        <p>Precio: 20 USDT</p>
         <p>Realiza una transferencia a la siguiente dirección de USDT:</p>
-        <p>Dirección: XXX</p>
-        <button class="btn btn-primary">Realizar Transferencia en USDT</button>
+        <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
+        <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
     </div>
 
     <div class="text-center mt-4">
-      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Notificar%20compra%20de%20curso%0ANombre%20y%20Apellido%3A%0ACurso%3A%0AMail%20para%20acceso%3A" target="_blank" class="btn btn-primary whatsappButton">Notificar Pago y Acceso al Curso</a>
+    <p>Una vez realizado el pago, haz clic en <b>Notificar Pago y Acceder al Curso</b> y adjunta el comprobante de pago</p>
+    </div>
+    <div class="text-center mt-4">
+      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Notificar%20compra%20de%20curso%0ANombre%20y%20Apellido%3A%0ACurso%3A%0AMail%20para%20acceso%3A" target="_blank" class="btn btn-primary whatsappButton">Notificar Pago y Acceder al Curso</a>
     </div>
 
     <div class="text-center mt-4">
-      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Necesito Ayuda con el Pago</a>
+      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Consultas y solicitud de ayuda con el proceso de pago</a>
     </div>
   </div>
 {% endblock %}
