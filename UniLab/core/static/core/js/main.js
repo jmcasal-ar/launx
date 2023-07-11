@@ -315,3 +315,19 @@ mailChimp();
         });
 
 })(jQuery);	
+
+$(document).ready(function() {
+  $('input[name="paymentMethod"]').change(function() {
+    var selectedOption = $(this).val();
+    $('.paymentMethodDetails').hide();
+    $('#' + selectedOption + 'Details').show();
+  });
+
+  $('#mercadoPagoButton').click(function() {
+    // Lógica para procesar el pago con Mercado Pago
+  });
+
+  $('#paypalButton').click(function() {
+    // Lógica para procesar el pago con PayPal
+  });
+});

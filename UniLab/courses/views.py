@@ -10,3 +10,7 @@ class CourseListView(ListView):
 
 class CourseDetailView(DetailView):
     model = Course
+
+class PaymentDetailView(DetailView):
+    model = Course
+    template_name = 'courses/payment_detail.html'

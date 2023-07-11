@@ -29,7 +29,7 @@
 /* 1. Theme default css */
 /* line 4, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
 body {
-  font-family: "Crimson Text", serif;
+  font-family: "Tahoma", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -81,7 +81,7 @@ button {
 
 /* line 38, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
 h1, h2, h3, h4, h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Tahoma", sans-serif;
   color: #2E004B;
 }
 
@@ -113,7 +113,7 @@ p {
   line-height: 28px;
   color: #919191;
   margin-bottom: 13px;
-  font-family: "Crimson Text", serif;
+  font-family: "Tahoma", sans-serif;
 }
 
 /* line 67, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
@@ -354,7 +354,7 @@ h3 {
   color:#8C0B6A;
   display: inline-block;
   padding: 18px 44px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Tahoma", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -660,7 +660,7 @@ h3 {
 /* line 21, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
 .section_title p {
   font-size: 17px;
-  font-family: "Crimson Text", serif;
+  font-family: "Tahoma", serif;
   font-weight: 400;
   line-height: 28px;
   color: #727272;
@@ -6763,10 +6763,64 @@ h6 {
   display: block;
 }
 
-
-
-
 .nuevoHeader{
   background: white;
  
+}
+
+
+
+.paymentMethodDetails {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paymentMethodDetails p {
+  margin-bottom: 10px;
+}
+
+.paymentMethodDetails button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paymentMethodDetails button:hover {
+  background-color: #0056b3;
+}
+
+.courseImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.whatsappButton {
+  background-color: #4ac959;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.whatsappButton:hover {
+  background-color: #3fa84e;
+}
+
+.container {
+  margin-bottom: 40px; /* Ajusta el margen inferior según sea necesario */
+  margin-top: 100px; 
 }

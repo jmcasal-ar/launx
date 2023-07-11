@@ -1,0 +1,125 @@
+{% extends 'core/base.html' %}
+{% block home %}{% url 'home' %}{% endblock %}
+{% block about %}{% url 'home' %}#about{% endblock %}
+{% block courses %}{% url 'courses:courses' %}{% endblock %}
+{% block news %}{% url 'news:news_list' %}{% endblock %}
+{% block homef %}{% url 'home' %}{% endblock %}
+{% block aboutf %}{% url 'home' %}#about{% endblock %}
+{% block coursesf %}{% url 'courses:courses' %}{% endblock %}
+{% block newsf %}{% url 'news:news_list' %}#news{% endblock %}
+{% load static %}
+{% block content %}
+{% load l10n %}
+
+<div class="container">
+    <h1>Compra del Curso Online</h1>
+
+    <div class="courseImageContainer text-center">
+      <img src="course-image.jpg" alt="Course Image" class="courseImage">
+    </div>
+
+    <h2>Selecciona tu forma de pago:</h2>
+
+    <div id="paymentOptions" class="btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="mercadoPago" value="mercadoPago"> Mercado Pago
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaPesos" value="transferenciaPesos"> Transferencia Bancaria (10% de descuento)
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="paypal" value="paypal"> PayPal
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaDolares" value="transferenciaDolares"> Transferencia Bancaria (10% de descuento)
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaEuros" value="transferenciaEuros"> Transferencia Bancaria (Euros)
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaBitcoin" value="transferenciaBitcoin"> Transferencia en Bitcoin
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaEtherium" value="transferenciaEtherium"> Transferencia en Etherium
+      </label>
+
+      <label class="btn btn-primary mb-2">
+        <input type="radio" name="paymentMethod" id="transferenciaUSDT" value="transferenciaUSDT"> Transferencia en USDT
+      </label>
+    </div>
+
+    <div id="paymentDetails">
+      <div id="mercadoPagoDetails" class="paymentMethodDetails">
+        <p>Precio: $XXX pesos</p>
+        <button class="btn btn-primary">Pagar con Mercado Pago</button>
+      </div>
+
+      <div id="transferenciaPesosDetails" class="paymentMethodDetails">
+        <p>Precio: $XXX pesos (10% de descuento)</p>
+        <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
+        <p>Banco: XXX</p>
+        <p>Titular: XXX</p>
+        <p>CBU: XXX</p>
+        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+      </div>
+
+      <div id="paypalDetails" class="paymentMethodDetails">
+        <p>Precio: $XXX dólares</p>
+        <button class="btn btn-primary">Pagar con PayPal</button>
+      </div>
+
+      <div id="transferenciaDolaresDetails" class="paymentMethodDetails">
+        <p>Precio: $XXX dólares (10% de descuento)</p>
+        <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
+        <p>Banco: XXX</p>
+        <p>Titular: XXX</p>
+        <p>SWIFT/BIC: XXX</p>
+        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+      </div>
+
+      <div id="transferenciaEurosDetails" class="paymentMethodDetails">
+        <p>Precio: XXX euros</p>
+        <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
+        <p>Banco: XXX</p>
+        <p>Titular: XXX</p>
+        <p>IBAN: XXX</p>
+        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+      </div>
+
+      <div id="transferenciaBitcoinDetails" class="paymentMethodDetails">
+        <p>Precio: XXX BTC</p>
+        <p>Realiza una transferencia a la siguiente dirección de Bitcoin:</p>
+        <p>Dirección: XXX</p>
+        <button class="btn btn-primary">Realizar Transferencia en Bitcoin</button>
+      </div>
+
+      <div id="transferenciaEtheriumDetails" class="paymentMethodDetails">
+        <p>Precio: XXX ETH</p>
+        <p>Realiza una transferencia a la siguiente dirección de Etherium:</p>
+        <p>Dirección: XXX</p>
+        <button class="btn btn-primary">Realizar Transferencia en Etherium</button>
+      </div>
+
+      <div id="transferenciaUSDTDetails" class="paymentMethodDetails">
+        <p>Precio: XXX USDT</p>
+        <p>Realiza una transferencia a la siguiente dirección de USDT:</p>
+        <p>Dirección: XXX</p>
+        <button class="btn btn-primary">Realizar Transferencia en USDT</button>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Notificar%20compra%20de%20curso%0ANombre%20y%20Apellido%3A%0ACurso%3A%0AMail%20para%20acceso%3A" target="_blank" class="btn btn-primary whatsappButton">Notificar Pago y Acceso al Curso</a>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Necesito Ayuda con el Pago</a>
+    </div>
+  </div>
+{% endblock %}
