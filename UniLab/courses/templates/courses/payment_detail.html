@@ -12,10 +12,10 @@
 {% load l10n %}
 
 <div class="container">
-    <h1>Compra del Curso Online</h1>
+    <h1>Compra del Curso {{course.title}}</h1>
 
     <div class="courseImageContainer text-center">
-      <img src="course-image.jpg" alt="Course Image" class="courseImage">
+      <img src="{{ course.imageCourse.url }}" alt="Course Image" class="courseImage">
     </div>
 
     <h2>Selecciona tu forma de pago:</h2>
@@ -26,7 +26,7 @@
       </label>
 
       <label class="btn btn-primary mb-2">
-        <input type="radio" name="paymentMethod" id="transferenciaPesos" value="transferenciaPesos"> Transferencia Bancaria (10% de descuento)
+        <input type="radio" name="paymentMethod" id="transferenciaPesos" value="transferenciaPesos"> Transferencia Bancaria en pesos (10% de descuento)
       </label>
 
       <label class="btn btn-primary mb-2">
@@ -34,7 +34,7 @@
       </label>
 
       <label class="btn btn-primary mb-2">
-        <input type="radio" name="paymentMethod" id="transferenciaDolares" value="transferenciaDolares"> Transferencia Bancaria (10% de descuento)
+        <input type="radio" name="paymentMethod" id="transferenciaDolares" value="transferenciaDolares"> Transferencia Bancaria en dolares (10% de descuento)
       </label>
 
       <label class="btn btn-primary mb-2">
@@ -56,26 +56,32 @@
 
     <div id="paymentDetails">
       <div id="mercadoPagoDetails" class="paymentMethodDetails">
-        <p>Precio: $XXX pesos</p>
-        <button class="btn btn-primary">Pagar con Mercado Pago</button>
+        <p>Precio: ${{course.pesoPrice}} pesos</p>
+        <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="button">
+</script>
       </div>
 
       <div id="transferenciaPesosDetails" class="paymentMethodDetails">
-        <p>Precio: $XXX pesos (10% de descuento)</p>
+        <p>Precio: ${{course.pesoPrice}} pesos (10% de descuento)</p>
         <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
-        <p>Banco: XXX</p>
-        <p>Titular: XXX</p>
-        <p>CBU: XXX</p>
-        <button class="btn btn-primary">Pagar por Transferencia Bancaria</button>
+        <p>Banco: Ciudad</p>
+        <p>Titular: Asociación Civil por el Desarrollo Económico y Social</p>
+        <p>CBU: 0290018600000502078400</p>
       </div>
 
       <div id="paypalDetails" class="paymentMethodDetails">
-        <p>Precio: $XXX dólares</p>
-        <button class="btn btn-primary">Pagar con PayPal</button>
+        <p>Precio: ${{course.dollarPrice}} dólares</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="Z8KH4E6PNUZ26">
+          <input type="image" src="https://www.paypalobjects.com/es_ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
+          <img alt="" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
       </div>
 
       <div id="transferenciaDolaresDetails" class="paymentMethodDetails">
-        <p>Precio: $XXX dólares (10% de descuento)</p>
+        <p>Precio: ${{course.dollarPrice}}dólares (10% de descuento)</p>
         <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
         <p>Banco: XXX</p>
         <p>Titular: XXX</p>
