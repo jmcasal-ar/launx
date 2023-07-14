@@ -29,7 +29,7 @@
 /* 1. Theme default css */
 /* line 4, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
 body {
-  font-family: "Tahoma", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -81,7 +81,7 @@ button {
 
 /* line 38, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
 h1, h2, h3, h4, h5 {
-  font-family: "Tahoma", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #2E004B;
 }
 
@@ -566,7 +566,7 @@ h3 {
 
 .redes {
   font-size: 24px;
-  color: black;
+  color: #0C154A;
   margin: 0px 10px;
   float: right;
   padding-bottom: 10px;
@@ -625,6 +625,11 @@ h3 {
 }
 
 /* line 2, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+.section_title {
+  text-align: center;
+  margin-bottom: 90px; /* Ajusta el valor según sea necesario */
+}
+
 .section_title h3 {
   font-size: 46px;
   font-weight: 400;
@@ -660,11 +665,14 @@ h3 {
 /* line 21, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
 .section_title p {
   font-size: 17px;
-  font-family: "Tahoma", serif;
+  font-family: "Montserrat", serif;
   font-weight: 400;
   line-height: 28px;
   color: #727272;
   margin-bottom: 0;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 @media (max-width: 767px) {
@@ -890,7 +898,7 @@ h3 {
 
 /* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
 .header-area .main-header-area .logo-img {
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media (max-width: 767px) {
@@ -1047,7 +1055,7 @@ h3 {
 .header-area .main-header-area .main-menu ul li a::before {
   position: absolute;
   content: "";
-  background: purple;
+  background: #f2f2f2;
   width: 100%;
   height: 3px;
   bottom: -1px;
@@ -1075,7 +1083,7 @@ h3 {
 
 /* line 145, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: purple;
+  color: #f2f2f2;
 }
 
 /* line 149, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
@@ -6753,6 +6761,10 @@ h6 {
 	font-weight: 400;
 }
 
+.service-item .service-content p {
+	text-align: justify;
+}
+
 .univ {
   
   background-size: cover;
@@ -6823,4 +6835,39 @@ h6 {
 .container {
   margin-bottom: 40px; /* Ajusta el margen inferior según sea necesario */
   margin-top: 100px; 
+}
+
+
+.pages-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.pages-img {
+  margin-bottom: 20px;
+}
+
+.pages-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.pages_details {
+  margin-left: 20px;
+  
+}
+
+.pages_details h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.pages_details p {
+  text-align: justify; /* Justifica el texto dentro del p */
+}
+.pages_details .excert {
+  line-height: 1.5;
 }

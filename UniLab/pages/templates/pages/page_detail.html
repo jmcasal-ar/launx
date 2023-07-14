@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% block home %}{% url 'home' %}{% endblock %}
+{% block about %}{% url 'home' %}#about{% endblock %}
+{% block courses %}{% url 'courses:courses' %}{% endblock %}
+{% block news %}{% url 'news:news_list' %}{% endblock %}
+{% block homef %}{% url 'home' %}{% endblock %}
+{% block aboutf %}{% url 'home' %}#about{% endblock %}
+{% block coursesf %}{% url 'courses:courses' %}{% endblock %}
+{% block newsf %}{% url 'news:news_list' %}{% endblock %}
+{% load static %}
+{% block content %}
+
+  <!-- bradcam_area_end -->
+   <!--================Blog Area =================-->
+
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 posts-list">
+               <div class="pages-post">
+                  <div class="pages-img">
+                     <img class="img-fluid" src="{% if object.imagePage.url != null %}
+                     {{object.imagePage.url}}
+                     {% endif %}" alt="">
+                  </div>
+                  <div class="pages_details">
+                     <h2>{{object.title}}
+                     </h2>
+                     <p class="excert">
+                        {{object.content|safe}}
+                     </p>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+
+   <!--================ Blog Area end =================-->
+
+{% endblock %}

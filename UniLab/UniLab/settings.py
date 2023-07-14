@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'core',
     'courses',
-    'news'
+    'news',
+    'pages'
 ]
 
 MIDDLEWARE = [
