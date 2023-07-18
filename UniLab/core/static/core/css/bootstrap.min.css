@@ -151,10 +151,10 @@ dfn {
     font-style: italic
 }
 
-/* b,
+b,
 strong {
     font-weight: bolder
-} */
+}
 
 small {
     font-size: 80%
@@ -512,7 +512,7 @@ mark {
 
 .img-fluid {
     max-width: 100%;
-    height: auto;
+    height: auto
 }
 
 .img-thumbnail {
@@ -521,7 +521,7 @@ mark {
     border: 1px solid #dee2e6;
     border-radius: .25rem;
     max-width: 100%;
-    height: auto;
+    height: auto
 }
 
 .figure {
