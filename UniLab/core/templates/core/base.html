@@ -76,28 +76,7 @@
 </nav>
     -->
     {% comment %} DE AQUI 17/04 {% endcomment %}
-    <div class="nuevoHeader">
-    <div class="container-fluid p-0">
-    <div class="row align-items-center no-gutters">
-    <div class="col-xl-12 col-lg-12 d-lg-block">
 
-        <a target="_blank" href="https://wa.me/5491131121084">
-            <i class=" redes fa fa-whatsapp"></i>
-        </a>
-        <a target="_blank" href="https://wa.me/5491131121084">
-            <i class="redes fa fa-facebook"></i>
-        </a>
-        <a target="_blank" href="https://wa.me/5491131121084">
-            <i class="redes fa fa-twitter"></i>
-        </a>
-        <a target="_blank" href="https://wa.me/5491131121084">
-            <i class="redes fa fa-instagram"></i>
-        </a>
-
-    </div>
-</div>
-</div>
-</div>
 
 
         <div class="header-area">
@@ -107,7 +86,8 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="{% url 'home' %}">
-                                    <img src="{% static 'core/img/1logo blanco Marca_LA_UNX-06.png' %}">
+                                    <img class="d-none d-lg-block" src="{% static 'core/img/1logo blanco Marca_LA_UNX-06.png' %}">
+                                    <img class="d-lg-none" src="{% static 'core/img/5logo blanco Marca_LA_UNX-06.png' %}" alt="Mobile Logo">
                                 </a>
                             </div>
                         </div>
