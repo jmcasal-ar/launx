@@ -860,7 +860,7 @@ h3 {
   width: 100%;
   /*top: 0;*/
   z-index: 99;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
   background: rgb(63,0,86);
   background: linear-gradient(90deg, rgba(63,0,86,1) 0%, rgba(224,63,195,1) 100%);
 }
@@ -6889,8 +6889,9 @@ h6 {
 }
 
 .carouseljmc {
-  padding-top: 100px;
-  padding-bottom: 10px;
+  /* background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% ); */
+  padding-top: 90px;
+  /* padding-bottom: 10px; */
 }
 #carouselExampleIndicators {
   position: relative;
@@ -6904,15 +6905,51 @@ h6 {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  filter: brightness(0.8);
+  filter: brightness(0.7);
 }
 
 
 @media (max-width: 767px) {
   #carouselExampleIndicators {
-      padding-top: 10px; /* Ajusta el valor según el tamaño de tu menú sticky */
+      /* padding-top: 10px;  */
   }
 }
 
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+}
+
+.carousel-caption h1 {
+  font-size: 36px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin: 0;
+  display: inline-block;
+}
+
+.carousel-caption h1:hover {
+  /* text-decoration: underline; */
+  /* background-color: #e03fc26b; */
+  color: white;
+}
+
+.carousel-caption h1 a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .carousel-caption h1 {
+    font-size: 24px;
+  }
+}
 
 
