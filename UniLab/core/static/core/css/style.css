@@ -6903,11 +6903,13 @@ h6 {
  /* max-height: 500px;  Ajusta el alto máximo según tus necesidades */
 }
 
-@media (min-width: 992px) {
+@media (max-width: 767px) {
   .carouseljmc .carousel-inner .carousel-item img {
-    max-height: 500px; /* Ajusta el alto máximo según tus necesidades */
+    min-height: 250px;
   }
 }
+
+
 
 #carouselExampleIndicators .carousel-inner .carousel-item img {
   object-fit: cover;
@@ -6942,6 +6944,10 @@ h6 {
   padding: 10px;
   margin: 0;
   display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .carousel-caption h1:hover {
@@ -6961,4 +6967,8 @@ h6 {
   }
 }
 
-
+@media (min-width: 992px) {
+  .carouseljmc .carousel-inner .carousel-item img {
+    max-height: 500px;  /* Ajusta el alto máximo según tus necesidades */
+  }
+}
