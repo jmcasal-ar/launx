@@ -6905,7 +6905,7 @@ h6 {
 
 @media (max-width: 767px) {
   .carouseljmc .carousel-inner .carousel-item img {
-    min-height: 250px;
+    min-height: 300px;
   }
 }
 
