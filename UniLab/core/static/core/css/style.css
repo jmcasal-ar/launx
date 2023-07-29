@@ -646,10 +646,13 @@ h3 {
   text-align: center;
   margin-bottom: 90px; /* Ajusta el valor según sea necesario */
 }
+.about-launx {
+  margin-top: 20px;
+}
 
 .section_title h3 {
   font-size: 46px;
-  font-weight: 400;
+  /* font-weight: 400; */
   line-height: 52px;
   margin-bottom: 23px;
   color: #1F1F1F;
@@ -1376,7 +1379,7 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
 .about_area {
-  padding: 200px 0 270px 0;
+  padding: 50px 0 270px 0;
 }
 
 @media (max-width: 767px) {
@@ -1389,14 +1392,14 @@ h3 {
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
   .about_area {
-    padding: 100px 0;
+    padding: 50px 0;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
   .about_area {
-    padding: 200px 0 200px 0;
+    padding: 50px 0 200px 0;
   }
 }
 
@@ -6850,10 +6853,10 @@ h6 {
   background-color: #3fa84e;
 }
 
-.container {
-  margin-bottom: 40px; /* Ajusta el margen inferior según sea necesario */
+/* .container {
+  margin-bottom: 40px; 
   margin-top: 100px; 
-}
+} */
 
 
 .pages-post {
