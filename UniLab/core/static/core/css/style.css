@@ -646,9 +646,14 @@ h3 {
   text-align: center;
   margin-bottom: 90px; /* Ajusta el valor según sea necesario */
 }
-.about-launx {
-  margin-top: 20px;
+
+@media (min-width: 1200px) {
+  .about-launx {
+    margin-top: 20px;
+  }
 }
+
+
 
 .section_title h3 {
   font-size: 46px;
