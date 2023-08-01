@@ -649,7 +649,7 @@ h3 {
 
 @media (min-width: 1200px) {
   .about-launx {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }
 
@@ -1407,7 +1407,11 @@ h3 {
     padding: 50px 0 200px 0;
   }
 }
-
+.etc {
+  padding: 50px 0 50px 0;
+    /* background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% ); */
+  /* background-color: #E6E6E6; */
+}
 /* line 12, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
 .about_area .single_about_info {
   position: relative;
@@ -1504,6 +1508,10 @@ h3 {
   position: absolute;
   left: 10%;
   z-index: 3;
+}
+
+.about_tutorials .courses img {
+  box-shadow: -5px 6px 0px rgb(196 181 253);
 }
 
 @media (max-width: 767px) {
@@ -3368,7 +3376,7 @@ h3 {
 @media (max-width: 767px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_popular_courses.scss */
   .popular_courses {
-    padding-top: 100px;
+    padding-top: 20px;
     padding-bottom: 100px;
   }
 }
@@ -3376,7 +3384,7 @@ h3 {
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_popular_courses.scss */
   .popular_courses {
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 100px;
   }
 }
@@ -6980,3 +6988,84 @@ h6 {
     max-height: 500px;  /* Ajusta el alto máximo según tus necesidades */
   }
 }
+
+
+
+
+
+.nuevaclase{
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px
+}
+
+
+
+
+
+.divider {
+  display: flex;
+  
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+  }
+}
+
+
+.line {
+  align-items: center;
+  margin: 1em 1em;
+  
+  &:before,
+  &:after {
+    height: 1px;
+    margin: 0 1em;
+  }
+}
+
+
+  .one-line {
+    &:before,
+    &:after {
+      background: black;
+    }
+  }
+
+  
+
+	.glow {
+    &:before,
+    &:after {
+      height: 6px;
+      -webkit-filter: blur(5px);
+      border-radius: 5px;
+    }
+    
+    &:before {
+      background: linear-gradient(to right, blue, hotpink);
+    }
+    
+    &:after {
+      background: linear-gradient(to left, blue, hotpink);
+    }
+  }
+
+
+.gradient {
+  align-items: stretch;
+  margin: 1em 0;
+  height: 2em;
+  line-height: 2em;
+  color: white;
+  background: black;
+  
+  &:before {
+    background: linear-gradient(to right, white, black);
+  }
+  
+  &:after {
+    background: linear-gradient(to left, white, black);
+	}
+}
+
+

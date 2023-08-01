@@ -42,7 +42,7 @@
 
 
     <!--Seccion universidades-->
-    <div class="about_area">
+    <div class="etc">
         <div class="container">
             <div class="row">
                 <div class="col-xl-5 col-lg-5">
@@ -62,67 +62,16 @@
             </div>
         </div>
     </div>
-
-
-    <!-- <div class="our_courses">
-        <div class="">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="section_title text-center mb-90">
-                        <h3>Sobre La UNx</h3>
-                         <p>La UNx es una plataforma que a través de cursos, talleres, conferencias e infoproductos ofrece en línea el conocimiento y la investigación de académicos y profesionales de las más prestigiosas universidades con el fin de brindar una oferta de educación masiva y de calidad abierta a todos los sectores de la población.
-                            <a href="{% url 'pages:pages' '1' 'manifiesto' %}"><u>Seguir Leyendo</u></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- our_courses_end -->
-{% comment %}
-    <div class="container-fluid" style="background-color: rebeccapurple;">
-
-        <div class="row">
-            <div class="col align-self-center"> <p class="section_title text-center"
-                style="color: white; font-size: 150%;">
-                <strong>Aprendé con profesionales de las mejores universidades</strong>
-                </p></div>
-        </div>
-        <!-- <div class="row ">
-            <div class="col-6 col-lg-2 img-fluid univ" style="
-             background-image: url('{% static 'core/img/univ/uba2.jpg' %}')">
-            </div>
-            <div class="col-6 col-lg-2 univ" style="
-            background-image: url('{% static 'core/img/univ2/untref.jpg' %}')">
-            </div>
-            <div class="col-6 col-lg-2 univ" style="
-            background-image: url('{% static 'core/img/univ/uader5.jpg' %}')">
-            </div>
-            <div class="col-6 col-lg-2 univ" style="
-            background-image: url('{% static 'core/img/univ/unaj.jpg' %}')">
-            </div>
-            <div class="col-6 col-lg-2 univ" style="
-            background-image: url('{% static 'core/img/univ/undav.jpg' %}')">
-            </div>
-            <div class="col-6 col-lg-2 univ" style="
-            background-image: url('{% static 'core/img/univ2/unlp.jpg' %}')">
-            </div>
-        </div> -->
-        <div class="row">
-                <img class="img-fluid" src="{% static 'core/img/univ3/Slider2 (1).png' %}" alt="">
-        </div>
-
     </div>
-    {% endcomment %}
-    <!-- popular_courses_start -->
-    
-
-
-    
-
-    <div id="courses" style="padding-bottom: 1%;">
+    <!-- <h2 class="divider line glow d-none d-md-block" ></h2> -->
+    <!-- <div style="background-color: #8404D9; height: 10px;">
         <br>
-    </div>
+        </div> -->
+
+   
+
+
+    
     <div class="popular_courses">
         <div class="container">
             <div class="row">
@@ -156,8 +105,8 @@
                                         aria-controls="design" aria-selected="false">Gestión y Management</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="design-tab" data-toggle="tab" href="#arte" role="tab"
-                                        aria-controls="design" aria-selected="false">Arte y Humanidades</a>
+                                    <a class="nav-link" id="design1-tab" data-toggle="tab" href="#arte" role="tab"
+                                        aria-controls="design1" aria-selected="false">Arte y Humanidades</a>
                                 </li>
                             </ul>
                         </nav>
@@ -177,7 +126,7 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
+                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>{{ course.tags.first.name}}</span>
@@ -211,7 +160,7 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
+                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>{{ course.tags.first.name}}</span>
@@ -246,11 +195,10 @@
                                 {% if course.categories.first.name == "Programación" %}
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
-                                            <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"></a>
-                                                    <img src="{{ course.imageCourse.url }}" alt="{{course.title}}">
-                                                </a>
-                                            </div>
+                                            <div class="single_courses">
+                                                <div class="thumb">
+                                                    <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
+                                                </div>
                                             <div class="courses_info">
                                                 <span>{{ course.tags.first.name}}</span>
                                                 {% if course.title|length < 55 %}
@@ -274,6 +222,7 @@
                                     </div>
                                     {% endif %}
                                 {% endfor %}
+                                </div>
                                 </div>
                     </div>
 
@@ -313,7 +262,7 @@
                                 </div>
                     </div>
 
-                     <div class="tab-pane fade" id="arte" role="tabpanel" aria-labelledby="design-tab">
+                     <div class="tab-pane fade" id="arte" role="tabpanel" aria-labelledby="design1-tab">
                             <div class="row">
                                 {% get_courses_list as course_list %}
                                 {% for course in course_list|slice:3 %}
@@ -321,7 +270,7 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}" style="background-image: url({{course.imageCourse.url}});" class="block20"></a>
+                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
                                             </div>
                                             <div class="courses_info">
                                                 <span>{{ course.tags.first.name}}</span>
