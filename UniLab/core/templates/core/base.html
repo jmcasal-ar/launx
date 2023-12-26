@@ -99,14 +99,14 @@
                                         <li><a href="{% block about %}#about{% endblock %}">Nosotros <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{% url 'pages:pages' '1' 'manifiesto' %}">Manifiesto</a></li>
-                                                <li><a href="https://www.launx.org/news/5/equipo/">Equipo</a></li>
-                                                <li><a href="https://www.launx.org/news/6/aliados/">Aliados</a></li>
+                                                <li><a href="{% url 'pages:pages' '3' 'Equipo' %}">Equipo</a></li>
+                                                <li><a href="{% url 'pages:pages' '4' 'Aliados' %}">Aliados</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="{% block courses %}#courses{% endblock %}">Cursos</a></li>
                                         <li><a href="{% block news %}#news{% endblock %}">Noticias</a></li>
-                                        <li><a href="https://www.launx.org/news/7/becas/">Becas</a></li>
-                                        <li><a target="_blank" href="{% block contact %}https://campus.launx.org/{% endblock %}">Campus</a></li>
+                                        <li><a href="{% url 'pages:pages' '2' 'becas' %}">Becas</a></li>
+                                        <li><a target="_blank" href="{% block contact %}https://campus.launxweb.org/{% endblock %}">Campus</a></li>
                                     </ul>
                                 </nav>
                             </div>
