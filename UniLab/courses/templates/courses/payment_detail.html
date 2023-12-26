@@ -8,6 +8,7 @@
 {% block coursesf %}{% url 'courses:courses' %}{% endblock %}
 {% block newsf %}{% url 'news:news_list' %}#news{% endblock %}
 {% load static %}
+{% load custom_tags %}
 {% block content %}
 {% load l10n %}
 
@@ -64,7 +65,7 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       </div>
 
       <div id="transferenciaPesosDetails" class="paymentMethodDetails">
-        <p>Precio: ${{course.pesoPrice}} pesos (10% de descuento)</p>
+        <p>Precio: ${{ course.pesoPrice|calc_discount:10|floatformat:"2" }} pesos (10% de descuento)</p>
         <p>Realiza una transferencia a la siguiente cuenta bancaria:</p>
         <p>Banco: Ciudad</p>
         <p>Titular: Asociación Civil por el Desarrollo Económico y Social</p>
@@ -75,15 +76,15 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
         <p>Precio: ${{course.dollarPrice}} dólares</p>
         <p>Con PayPal, podrás pagar con tarjeta de crédito, tarjeta de débito, efectivo y saldo virtual desde cualquier parte del mundo</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="Z8KH4E6PNUZ26">
-          <input type="image" src="https://www.paypalobjects.com/es_ES/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma rápida y segura de pagar en Internet.">
-          <img alt="" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-          </form>
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="{{course.urlPayPaL}}" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal es una forma segura y fácil de pagar en línea." alt="Comprar ahora" />
+        </form>
       </div>
 
       <div id="transferenciaDolaresDetails" class="paymentMethodDetails">
-        <p>Precio: ${{course.dollarPrice}} dólares (10% de descuento)</p>
+        <p>Precio: ${{ course.dollarPrice|calc_discount:10|floatformat:"2" }} dólares (10% de descuento)</p>
         <p>Realiza una transferencia a la siguiente cuenta bancaria de Wise:</p>
         <p>Titular: Juan Manuel Casal</p>
         <p>SWIFT/BIC: CMFGUS33</p>
@@ -99,7 +100,7 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       </div>
 
       <div id="transferenciaBitcoinDetails" class="paymentMethodDetails">
-        <p>Precio: 0,00066 BTC</p>
+        <p>Precio: 0,00066 {{ precio_bitcoin|default:"N/A" }} BTC</p>
         <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>

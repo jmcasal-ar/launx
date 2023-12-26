@@ -97,7 +97,7 @@ class Course(models.Model):
     university = models.ManyToManyField(University, verbose_name="Universidad", related_name="get_course_universitys")
     hoursDuration = models.SmallIntegerField(verbose_name="Horas de Duración del curso", blank=True, null=True)
     urlMercadoPago = models.URLField(max_length=200, null=True, blank=True)
-    urlPayPaL = models.URLField(max_length=200, null=True, blank=True)
+    urlPayPaL = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = "curso"

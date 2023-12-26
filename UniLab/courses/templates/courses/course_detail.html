@@ -78,7 +78,7 @@
                                 <li><a href="{{ course.professor.first.linkedin}}" target="_blank"> <i class="ti-linkedin"></i> </a></li>
                             </ul>
                         </div>
-                        <a href="{% url 'courses:payment' pk=3 slug='introduccion-al-analisis-de-datos-espaciales' %}" class="boxed_btn">Inscribirse</a>
+                        <a href="{% url 'courses:payment' course.id course.title|slugify %}" class="boxed_btn">Inscribirse</a>
                     </div>
                 </div>
             </div>
