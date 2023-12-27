@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% load course_tags %}
 {% block content %}
 
   <div class="carouseljmc">
@@ -89,37 +90,31 @@
                         <nav>
                             <ul class="nav" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#todos" role="tab"
-                                        aria-controls="home" aria-selected="true">Todos los Cursos</a>
+                                    <a class="nav-link active" id="todos-tab" data-toggle="tab" href="#todos" role="tab" aria-controls="todos" aria-selected="true">Todos los Cursos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#cienciaDatos" role="tab"
-                                        aria-controls="profile" aria-selected="false">Ciencia de Datos</a>
+                                    <a class="nav-link" id="cienciaDatos-tab" data-toggle="tab" href="#cienciaDatos" role="tab" aria-controls="cienciaDatos" aria-selected="false">Ciencia de Datos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#programacion" role="tab"
-                                        aria-controls="contact" aria-selected="false">Programación</a>
+                                    <a class="nav-link" id="programacion-tab" data-toggle="tab" href="#programacion" role="tab" aria-controls="programacion" aria-selected="false">Programación</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="design-tab" data-toggle="tab" href="#gestion" role="tab"
-                                        aria-controls="design" aria-selected="false">Gestión y Management</a>
+                                    <a class="nav-link" id="gestion-tab" data-toggle="tab" href="#gestion" role="tab" aria-controls="gestion" aria-selected="false">Gestión y Management</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="design1-tab" data-toggle="tab" href="#arte" role="tab"
-                                        aria-controls="design1" aria-selected="false">Arte y Humanidades</a>
+                                    <a class="nav-link" id="arte-tab" data-toggle="tab" href="#arte" role="tab" aria-controls="arte" aria-selected="false">Arte y Humanidades</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div class="all_courses">
-            <div class="container">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="row">
+            
+            <div class="all_courses">
+                <div class="container">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+                            <div class="row">
                                 {% load courses_extras %}
                                 {% get_courses_list as course_list %}
                                 {% for course in course_list|slice:3 %}
@@ -138,175 +133,151 @@
                                                 {% load l10n %}
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="prise">
-                                                        {% comment %} <span class="offer">$89.00</span> {% endcomment %}
                                                         <span class="active_prise">
                                                             <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
                                                         </span>
-                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 {% endfor %}
-                                </div>
-                    </div>
-                    <div class="tab-pane fade" id="cienciaDatos" role="tabpanel" aria-labelledby="profile-tab">
+                            </div>
+                        </div>
+            
+                        <div class="tab-pane fade" id="cienciaDatos" role="tabpanel" aria-labelledby="cienciaDatos-tab">
                             <div class="row">
-                                {% get_courses_list as course_list %}
-                                {% for course in course_list|slice:3 %}
-                                {% if course.categories.first.name == "Ciencia de Datos" %}
-                                    <div class="col-xl-4 col-lg-4 col-md-6">
-                                        <div class="single_courses">
-                                            <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
-                                            </div>
-                                            <div class="courses_info">
-                                                <span>{{ course.tags.first.name}}</span>
-                                                {% if course.title|length < 55 %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
-                                                {% else %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
-                                                {% endif %}
-                                                {% load l10n %}
-                                                <div class="star_prise d-flex justify-content-between">
-                                                    <div class="prise">
-                                                        {% comment %} <span class="offer">$89.00</span> {% endcomment %}
-                                                        <span class="active_prise">
-                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
-                                                        </span>
-                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                {% endfor %}
-                                </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="programacion" role="tabpanel" aria-labelledby="contact-tab">
-                            <div class="row">
-                                {% get_courses_list as course_list %}
-                                {% for course in course_list|slice:3 %}
-                                {% if course.categories.first.name == "Programación" %}
-                                    <div class="col-xl-4 col-lg-4 col-md-6">
-                                        <div class="single_courses">
+                                {% get_courses_by_category 1 as category_courses %}
+                                {% for course in category_courses|slice:3 %}
+                                        <div class="col-xl-4 col-lg-4 col-md-6">
                                             <div class="single_courses">
                                                 <div class="thumb">
                                                     <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
                                                 </div>
-                                            <div class="courses_info">
-                                                <span>{{ course.tags.first.name}}</span>
-                                                {% if course.title|length < 55 %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
-                                                {% else %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
-                                                {% endif %}
-                                                {% load l10n %}
-                                                <div class="star_prise d-flex justify-content-between">
-                                                    <div class="prise">
-                                                        {% comment %} <span class="offer">$89.00</span> {% endcomment %}
-                                                        <span class="active_prise">
-                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
-                                                        </span>
-                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
+                                                <div class="courses_info">
+                                                    <span>{{ course.tags.first.name}}</span>
+                                                    {% if course.title|length < 55 %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
+                                                    {% else %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
+                                                    {% endif %}
+                                                    {% load l10n %}
+                                                    <div class="star_prise d-flex justify-content-between">
+                                                        <div class="prise">
+                                                            <span class="active_prise">
+                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    {% endif %}
                                 {% endfor %}
-                                </div>
-                                </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="gestion" role="tabpanel" aria-labelledby="design-tab">
+                            </div>
+                        </div>
+            
+                        <div class="tab-pane fade" id="programacion" role="tabpanel" aria-labelledby="programacion-tab">
                             <div class="row">
-                                {% get_courses_list as course_list %}
-                                {% for course in course_list|slice:3 %}
-                                {% if course.categories.first.name == "Gestión y Management" %}
-                                    <div class="col-xl-4 col-lg-4 col-md-6">
-                                        <div class="single_courses">
-                                            <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
-                                            </div>
-                                            <div class="courses_info">
-                                                <span>{{ course.tags.first.name}}</span>
-                                                {% if course.title|length < 55 %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
-                                                {% else %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
-                                                {% endif %}
-                                                {% load l10n %}
-                                                <div class="star_prise d-flex justify-content-between">
-                                                    <div class="prise">
-                                                        {% comment %} <span class="offer">$89.00</span> {% endcomment %}
-                                                        <span class="active_prise">
-                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
-                                                        </span>
-                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
+                                {% get_courses_by_category 3 as category_courses %}
+                                {% for course in category_courses|slice:3 %}
+                                        <div class="col-xl-4 col-lg-4 col-md-6">
+                                            <div class="single_courses">
+                                                <div class="thumb">
+                                                    <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
+                                                </div>
+                                                <div class="courses_info">
+                                                    <span>{{ course.tags.first.name}}</span>
+                                                    {% if course.title|length < 55 %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
+                                                    {% else %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
+                                                    {% endif %}
+                                                    {% load l10n %}
+                                                    <div class="star_prise d-flex justify-content-between">
+                                                        <div class="prise">
+                                                            <span class="active_prise">
+                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                {% endif %}
                                 {% endfor %}
-                                </div>
-                    </div>
-
-                     <div class="tab-pane fade" id="arte" role="tabpanel" aria-labelledby="design1-tab">
+                            </div>
+                        </div>
+            
+                        <div class="tab-pane fade" id="gestion" role="tabpanel" aria-labelledby="gestion-tab">
                             <div class="row">
-                                {% get_courses_list as course_list %}
-                                {% for course in course_list|slice:3 %}
-                                {% if course.categories.first.name == "Arte" or course.categories.first.name == "Humanidades" %}
-                                    <div class="col-xl-4 col-lg-4 col-md-6">
-                                        <div class="single_courses">
-                                            <div class="thumb">
-                                                <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
-                                            </div>
-                                            <div class="courses_info">
-                                                <span>{{ course.tags.first.name}}</span>
-                                                {% if course.title|length < 55 %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
-                                                {% else %}
-                                                <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
-                                                {% endif %}
-                                                {% load l10n %}
-                                                <div class="star_prise d-flex justify-content-between">
-                                                    <div class="prise">
-                                                        {% comment %} <span class="offer">$89.00</span> {% endcomment %}
-                                                        <span class="active_prise">
-                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
-                                                        </span>
-                                                        <!--&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                        <input class="  btn btn-success mb-1" type="button" value="Comprar">-->
+                                {% get_courses_by_category 2 as category_courses %}
+                                {% for course in category_courses|slice:3 %}
+                                        <div class="col-xl-4 col-lg-4 col-md-6">
+                                            <div class="single_courses">
+                                                <div class="thumb">
+                                                    <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
+                                                </div>
+                                                <div class="courses_info">
+                                                    <span>{{ course.tags.first.name}}</span>
+                                                    {% if course.title|length < 55 %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
+                                                    {% else %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
+                                                    {% endif %}
+                                                    {% load l10n %}
+                                                    <div class="star_prise d-flex justify-content-between">
+                                                        <div class="prise">
+                                                            <span class="active_prise">
+                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                {% endif %}
                                 {% endfor %}
-                                </div>
-                    </div>
-
-
-                    <div class="col-xl-12">
-                        <div class="more_courses text-center">
-                            <a href="{% url 'courses:courses' %}" class="boxed_btn_rev">Más cursos</a>
+                            </div>
+                        </div>
+            
+                        <div class="tab-pane fade" id="arte" role="tabpanel" aria-labelledby="arte-tab">
+                            <div class="row">
+                                {% get_courses_by_category 4 as category_courses %}
+                                {% for course in category_courses|slice:3 %}
+                                        <div class="col-xl-4 col-lg-4 col-md-6">
+                                            <div class="single_courses">
+                                                <div class="thumb">
+                                                    <a href="{% url 'courses:course' course.id course.title|slugify %}"> <img src="{{course.imageCourse.url}}" alt=""> </a>
+                                                </div>
+                                                <div class="courses_info">
+                                                    <span>{{ course.tags.first.name}}</span>
+                                                    {% if course.title|length < 55 %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title}}</a></h3>
+                                                    {% else %}
+                                                    <h3><a href="{% url 'courses:course' course.id course.title|slugify %}">{{course.title|slice:"50"}}...</a></h3>
+                                                    {% endif %}
+                                                    {% load l10n %}
+                                                    <div class="star_prise d-flex justify-content-between">
+                                                        <div class="prise">
+                                                            <span class="active_prise">
+                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+            
+                        <div class="col-xl-12">
+                            <div class="more_courses text-center">
+                                <a href="{% url 'courses:courses' %}" class="boxed_btn_rev">Más cursos</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            
     </div>
     <!-- popular_courses_end-->
 
