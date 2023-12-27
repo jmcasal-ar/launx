@@ -117,7 +117,7 @@
                             <div class="row">
                                 {% load courses_extras %}
                                 {% get_courses_list as course_list %}
-                                {% for course in course_list|slice:3 %}
+                                {% for course in course_list|dictsortreversed:"order"|slice:3 %}
                                     <div class="col-xl-4 col-lg-4 col-md-6">
                                         <div class="single_courses">
                                             <div class="thumb">
@@ -134,7 +134,7 @@
                                                 <div class="star_prise d-flex justify-content-between">
                                                     <div class="prise">
                                                         <span class="active_prise">
-                                                            <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                            <strong><a href="{% url 'courses:payment' course.id course.title|slugify %}" target="_blank">Inscribirse</a></strong>
                                                         </span>
                                                     </div>
                                                 </div>
@@ -148,7 +148,7 @@
                         <div class="tab-pane fade" id="cienciaDatos" role="tabpanel" aria-labelledby="cienciaDatos-tab">
                             <div class="row">
                                 {% get_courses_by_category 1 as category_courses %}
-                                {% for course in category_courses|slice:3 %}
+                                {% for course in category_courses|dictsortreversed:"order"|slice:3 %}
                                         <div class="col-xl-4 col-lg-4 col-md-6">
                                             <div class="single_courses">
                                                 <div class="thumb">
@@ -165,7 +165,7 @@
                                                     <div class="star_prise d-flex justify-content-between">
                                                         <div class="prise">
                                                             <span class="active_prise">
-                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                                <strong><a href="{% url 'courses:payment' course.id course.title|slugify %}" target="_blank">Inscribirse</a></strong>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -196,7 +196,7 @@
                                                     <div class="star_prise d-flex justify-content-between">
                                                         <div class="prise">
                                                             <span class="active_prise">
-                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                                <strong><a href="{% url 'courses:payment' course.id course.title|slugify %}" target="_blank">Inscribirse</a></strong>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -227,7 +227,7 @@
                                                     <div class="star_prise d-flex justify-content-between">
                                                         <div class="prise">
                                                             <span class="active_prise">
-                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                                <strong><a href="{% url 'courses:payment' course.id course.title|slugify %}" target="_blank">Inscribirse</a></strong>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -258,7 +258,7 @@
                                                     <div class="star_prise d-flex justify-content-between">
                                                         <div class="prise">
                                                             <span class="active_prise">
-                                                                <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScoezL45gWj_Tlt8V5uRQ5hMPpOunM7AN9E6xcwMy2VmoXk7Q/viewform" target="_blank">Inscribirse</a></strong>
+                                                                <strong><a href="{% url 'courses:payment' course.id course.title|slugify %}" target="_blank">Inscribirse</a></strong>
                                                             </span>
                                                         </div>
                                                     </div>

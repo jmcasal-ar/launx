@@ -3482,6 +3482,11 @@ h3 {
   margin-top: 11px;
   margin-bottom: 30px;
 }
+@media (min-width: 768px) {
+  .popular_courses .single_courses .courses_info h3 {
+    min-height: 54px; /* Ajusta la altura mínima según tus necesidades */
+  }
+}
 
 @media (max-width: 767px) {
   /* line 52, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_popular_courses.scss */
