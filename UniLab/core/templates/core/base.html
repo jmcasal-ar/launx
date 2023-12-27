@@ -95,8 +95,8 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="{% block home %}#home{% endblock %}">Inicio</a></li>
-                                        <li><a href="{% block about %}#about{% endblock %}">Nosotros <i class="ti-angle-down"></i></a>
+                                        <li><a href="{% block home %}#{% endblock %}">Inicio</a></li>
+                                        <li><a href="#">Nosotros <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{% url 'pages:pages' '1' 'manifiesto' %}">Manifiesto</a></li>
                                                 <li><a href="{% url 'pages:pages' '3' 'Equipo' %}">Equipo</a></li>
@@ -195,10 +195,9 @@
                             </h3>
                             <ul>
                                 <li><a href="{% block homef %}#home{% endblock %}">Inicio</a></li>
-                                <li><a href="{% block aboutf %}#about{% endblock %}">Nosotros</a></li>
+                                <li><a href="{% url 'pages:pages' '1' 'manifiesto' %}">Nosotros</a></li>
                                 <li><a href="{% block coursesf %}#courses{% endblock %}">Cursos</a></li>
                                 <li><a href="{% block newsf %}#news{% endblock %}">Noticias</a></li>
-                                <li><a href="{% block contactf %}#contact{% endblock %}">Contacto</a></li>
                             </ul>
                         </div>
                     </div>
