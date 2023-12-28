@@ -104,26 +104,27 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       <div id="transferenciaBitcoinDetails" class="paymentMethodDetails">
         {% if precio_bitcoin %}
         <p>Precio: {{ precio_bitcoin }} BTC</p>
-        <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
-        <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
-        <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
-    {% else %}
+        {% else %}
         <p>Precio: No disponible</p>
-    {% endif %}
+        {% endif %}
         <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
 
       <div id="transferenciaEtheriumDetails" class="paymentMethodDetails">
+        {% if precio_ethereum %}
         <p>Precio: {{ precio_ethereum }} ETH</p>
+        {% else %}
+        <p>Precio: No disponible</p>
+        {% endif %}
         <p>Realiza una transferencia a la siguiente dirección de Etherium:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
 
       <div id="transferenciaUSDTDetails" class="paymentMethodDetails">
-        <p>Precio: 20 USDT</p>
+        <p>Precio: ${{course.dollarPrice}} USDT</p>
         <p>Realiza una transferencia a la siguiente dirección de USDT:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
