@@ -13,9 +13,11 @@
 {% load l10n %}
 
 <div class="container">
+  {% comment %}  {% endcomment %}
     <h1>Compra del Curso {{course.title}}</h1>
 
     <div class="courseImageContainer text-center">
+      <div class="payment-separator-top"></div>
       <img src="{{ course.imageCourse.url }}" alt="Course Image" class="courseImage">
     </div>
 
@@ -27,7 +29,7 @@
       </label>
 
       <label class="btn btn-primary mb-2">
-        <input type="radio" name="paymentMethod" id="transferenciaPesos" value="transferenciaPesos"> Transferencia Bancaria en pesos (10% de descuento)
+        <input type="radio" name="paymentMethod" id="transferenciaPesos" value="transferenciaPesos"> Transferencia Bancaria en pesos
       </label>
 
       <label class="btn btn-primary mb-2">
@@ -35,7 +37,7 @@
       </label>
 
       <label class="btn btn-primary mb-2">
-        <input type="radio" name="paymentMethod" id="transferenciaDolares" value="transferenciaDolares"> Transferencia Bancaria en dolares (10% de descuento)
+        <input type="radio" name="paymentMethod" id="transferenciaDolares" value="transferenciaDolares"> Transferencia Bancaria en dolares
       </label>
 
       <label class="btn btn-primary mb-2">
@@ -129,14 +131,14 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
     </div>
 
     <div class="text-center mt-4">
-    <p>Una vez realizado el pago, haz clic en <b>Notificar Pago y Acceder al Curso</b> y adjunta el comprobante de pago</p>
+    <p>Una vez realizado el pago, haz clic en <b>Notificar Pago y Acceder al Curso</b> y te brindaremos, a través de WhatsApp, el acceso al curso</p>
     </div>
     <div class="text-center mt-4">
       <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Notificar%20compra%20de%20curso%0ANombre%20y%20Apellido%3A%0ACurso%3A%0AMail%20para%20acceso%3A" target="_blank" class="btn btn-primary whatsappButton">Notificar Pago y Acceder al Curso</a>
     </div>
 
     <div class="text-center mt-4">
-      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Consultas y solicitud de ayuda con el proceso de pago</a>
+      <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Escribinos tu consulta</a>
     </div>
   </div>
   <div class="payment-separator-footer"></div>

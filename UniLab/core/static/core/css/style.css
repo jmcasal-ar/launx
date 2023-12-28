@@ -7114,3 +7114,7 @@ h6 {
   100% { transform: scale(1); }
 }
 
+.payment-separator-top {
+  margin-top: 60px; /* Ajusta el valor según la cantidad de espacio que necesitas */
+  /* Otros estilos que ya puedas tener para este elemento */
+}
