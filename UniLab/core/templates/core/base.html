@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{% static 'core/css/gijgo.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'core/css/slicknav.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     {% comment %} <link rel="stylesheet" href="{% static 'core/css/nuevoCSS.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
 
@@ -172,6 +173,9 @@
                             </div>
 
                         </div>
+                    </div>
+                    <div id="whatsapp-btn" onclick="enviarMensajeWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                         <div class="footer_widget">
@@ -327,6 +331,20 @@ Copyright &copy; ACDES <script>document.write(new Date().getFullYear());</script
 	var scroll = new SmoothScroll('a[href*="#"]');
     </script>
     <script src="{% static 'core/js/main.js' %}"></script>
+    <script>
+        // Función para enviar mensaje de WhatsApp
+        function enviarMensajeWhatsApp() {
+            // Número de teléfono y mensaje predeterminado
+            var phoneNumber = '+5491123946296';
+            var message = 'Hola!';
+
+            // Construye el enlace de WhatsApp con el número y mensaje
+            var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+
+            // Abre una nueva ventana o pestaña para iniciar el chat de WhatsApp
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
 </body>
 
 </html>

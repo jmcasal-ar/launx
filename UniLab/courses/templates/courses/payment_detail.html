@@ -100,14 +100,21 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       </div>
 
       <div id="transferenciaBitcoinDetails" class="paymentMethodDetails">
-        <p>Precio: 0,00066 {{ precio_bitcoin|default:"N/A" }} BTC</p>
+        {% if precio_bitcoin %}
+        <p>Precio: {{ precio_bitcoin }} BTC</p>
+        <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
+        <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
+        <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
+    {% else %}
+        <p>Precio: No disponible</p>
+    {% endif %}
         <p>Realiza una transferencia a la siguiente billetera de Bitcoin:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
       </div>
 
       <div id="transferenciaEtheriumDetails" class="paymentMethodDetails">
-        <p>Precio: 0,011 ETH</p>
+        <p>Precio: {{ precio_ethereum }} ETH</p>
         <p>Realiza una transferencia a la siguiente dirección de Etherium:</p>
         <p>Red: <b>BSC</b> BNB Smart Chain (BEP20)</p>
         <p>Dirección: 0xa82323367193c05fdc68131df753ee1275aaf834</p>
@@ -132,4 +139,5 @@ data-preference-id="76799908-b7043371-ce79-4240-9753-ff0292c13da0" data-source="
       <a href="https://api.whatsapp.com/send?phone=5491123946296&text=Solicito%20soporte%20t%C3%A9cnico%20para%20el%20pago" target="_blank" class="btn btn-primary whatsappButton">Consultas y solicitud de ayuda con el proceso de pago</a>
     </div>
   </div>
+  <div class="payment-separator-footer"></div>
 {% endblock %}

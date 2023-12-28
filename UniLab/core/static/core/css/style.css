@@ -7078,3 +7078,39 @@ h6 {
   padding-top: 80px;
   /* padding-bottom: 10px; */
 }
+
+.payment-separator-footer {
+  margin-top: 40px; /* Puedes ajustar este valor según sea necesario */
+}
+
+
+#whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #fff;
+  width: 70px; /* Ajusta el ancho del botón */
+  height: 70px; /* Ajusta la altura del botón */
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  animation: pulse 1s infinite; /* Animación pulsante */
+  transition: background-color 0.3s ease-in-out; /* Transición de color al pasar el mouse */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#whatsapp-btn:hover {
+  /* background-color: #128C7E; Cambia el color al pasar el mouse */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al hacer hover */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
