@@ -73,10 +73,10 @@
                             <p class="text_info">
                                 {{ course.professor.first.bio|safe }}
                             </p>
-                            <ul>
+                            {% comment %} <ul>
                                 <li><a href="https://twitter.com/" target="_blank"> <i class="fa fa-twitter"></i> </a></li>
                                 <li><a href="{{ course.professor.first.linkedin}}" target="_blank"> <i class="ti-linkedin"></i> </a></li>
-                            </ul>
+                            </ul> {% endcomment %}
                         </div>
                         <a href="{% url 'courses:payment' course.id course.title|slugify %}" class="boxed_btn">Inscribirse</a>
                     </div>
