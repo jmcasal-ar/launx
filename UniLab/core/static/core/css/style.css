@@ -1825,9 +1825,9 @@ h3 {
 }
 
 /* line 82, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
-.footer .footer_top .footer_widget ul li a:hover {
+/* .footer .footer_top .footer_widget ul li a:hover {
   color: #8C0B6A;
-}
+} */
 
 /* line 88, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget .newsletter_form {
@@ -1887,7 +1887,7 @@ h3 {
 /* line 130, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right {
   font-size: 16px;
-  color: #919191;
+  color: #fff;
   margin-bottom: 0;
   font-weight: 400;
 }
