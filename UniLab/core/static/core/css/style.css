@@ -2583,19 +2583,19 @@ h3 {
 }
 
 /* line 85, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_faq.scss */
-.courses_details_info .btn-link.focus, .courses_details_info .btn-link:focus {
+/* .courses_details_info .btn-link.focus, .courses_details_info .btn-link:focus {
   text-decoration: none;
   border-color: transparent;
   box-shadow: none;
-}
+} */
 
 /* line 90, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_faq.scss */
-.courses_details_info .btn-link:hover {
+/* .courses_details_info .btn-link:hover {
   color: #0056b3;
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-}
+} */
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_coures.scss */
 .our_courses {
@@ -3117,6 +3117,24 @@ h3 {
   font-size: 17px;
   line-height: 21px;
   margin-bottom: 0;
+}
+
+.courses_details_info .single_courses a {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #8e44ad;
+  margin-bottom: 13px;
+  font-family: "Tahoma", sans-serif;
+}
+
+.courses_details_info .single_courses a:hover {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #c65cf3;
+  margin-bottom: 13px;
+  font-family: "Tahoma", sans-serif;
 }
 
 /* line 97, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
