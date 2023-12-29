@@ -27,7 +27,7 @@ class PaymentDetailView(DetailView):
             response = requests.get(url_api_bitcoin)
             response.raise_for_status()
             data = response.json()
-            precio_bitcoin_usd = data.get("bitcoin", {}).get("usd")  # Usa get para manejar claves ausentes
+            precio_bitcoin_usd = data.get("bitcoin", {}).get("usd")
             return precio_bitcoin_usd
         except requests.exceptions.RequestException as e:
             print(f"Error al obtener el precio del Bitcoin: {e}")
@@ -39,7 +39,7 @@ class PaymentDetailView(DetailView):
             response = requests.get(url_api_ethereum)
             response.raise_for_status()
             data = response.json()
-            precio_ethereum_usd = data.get("ethereum", {}).get("usd")  # Usa get para manejar claves ausentes
+            precio_ethereum_usd = data.get("ethereum", {}).get("usd")
             return precio_ethereum_usd
         except requests.exceptions.RequestException as e:
             print(f"Error al obtener el precio del Ethereum: {e}")
@@ -61,16 +61,19 @@ class PaymentDetailView(DetailView):
                 cache.get('last_update_time') is None or \
                 (datetime.now() - cache.get('last_update_time')).days >= 1:
 
-            # Obtener los precios actualizados
-            precio_bitcoin = self.obtener_precio_bitcoin()
-            precio_ethereum = self.obtener_precio_ethereum()
+            try:
+                # Obtener los precios actualizados
+                precio_bitcoin = self.obtener_precio_bitcoin()
+                precio_ethereum = self.obtener_precio_ethereum()
 
-            # Guardar precios en caché
-            cache.set(btc_cache_key, precio_bitcoin)
-            cache.set(eth_cache_key, precio_ethereum)
+                # Guardar precios en caché
+                cache.set(btc_cache_key, precio_bitcoin)
+                cache.set(eth_cache_key, precio_ethereum)
 
-            # Actualizar el tiempo de la última actualización
-            cache.set('last_update_time', datetime.now())
+                # Actualizar el tiempo de la última actualización
+                cache.set('last_update_time', datetime.now())
+            except Exception as e:
+                print(f"Error al actualizar la caché: {e}")
 
         if precio_bitcoin is not None:
             precio_bitcoin = round(float(precio_bitcoin), 2)
@@ -87,5 +90,8 @@ class PaymentDetailView(DetailView):
             context['precio_ethereum'] = round(Decimal(self.object.dollarPrice) / Decimal(precio_ethereum), 8)
         else:
             context['precio_ethereum'] = None
+
+        print(f"self.object.dollarPrice: {self.object.dollarPrice}")
+        print(f"precio_bitcoin: {precio_bitcoin}")
 
         return context
