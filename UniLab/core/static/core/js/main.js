@@ -1,6 +1,7 @@
 (function ($) {
 "use strict";
 
+
 // Verificar si el loader ya se ha mostrado
 if (!sessionStorage.getItem('loaderShown')) {
   // Mostrar el loader
