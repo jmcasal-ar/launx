@@ -6937,12 +6937,14 @@ h6 {
 .pages-post {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  /* align-items: center; */
 }
 
 .pages-img {
   margin-bottom: 20px;
+  display: flex; /* Utilizamos flexbox para alinear los elementos internos */
+  justify-content: center; /* Alineamos horizontalmente los elementos al centro */
+  align-items: center; /
 }
 
 .pages-img img {
@@ -6950,10 +6952,10 @@ h6 {
   height: auto;
   border-radius: 5px;
 }
-.pages_details {
+/* .pages_details {
   margin-left: 20px;
 
-}
+} */
 
 .pages_details h2 {
   font-size: 24px;
@@ -6961,11 +6963,15 @@ h6 {
   margin-bottom: 10px;
   text-align: center;
 }
-.pages_details p {
-  text-align: justify; /* Justifica el texto dentro del p */
-}
+/* .pages_details p {
+  text-align: justify; 
+} */
 .pages_details .excert {
   line-height: 1.5;
+}
+
+.pages_details strong {
+  font-weight: bold;
 }
 
 .carouseljmc {
@@ -7284,3 +7290,5 @@ h6 {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+    

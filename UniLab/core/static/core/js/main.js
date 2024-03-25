@@ -342,5 +342,3 @@ $(document).ready(function() {
     // Lógica para procesar el pago con PayPal
   });
 });
-
-
