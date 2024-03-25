@@ -1,5 +1,22 @@
 (function ($) {
 "use strict";
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (!sessionStorage.getItem('loaderShown')) {
+      document.getElementById('loader').style.display = 'flex'; // Mostrar el loader
+      sessionStorage.setItem('loaderShown', true);
+  }
+
+  // Oculta el loader después de 3 segundos
+  setTimeout(function() {
+      document.getElementById('loader').style.display = 'none'; // Ocultar el loader
+  }, 3000); // 3000 milisegundos = 3 segundos
+});
+
+window.onload = function() {
+  document.getElementById('loader').style.display = 'none'; // Ocultar el loader si la página se carga completamente
+};
+
 // TOP Menu Sticky
 $(window).on('scroll', function () {
 	var scroll = $(window).scrollTop();
@@ -333,13 +350,3 @@ $(document).ready(function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  if (!sessionStorage.getItem('loaderShown')) {
-      document.getElementById('loader').style.display = 'flex'; // Mostrar el loader
-      sessionStorage.setItem('loaderShown', true);
-  }
-});
-
-window.onload = function() {
-  document.getElementById('loader').style.display = 'none'; // Ocultar el loader
-};
