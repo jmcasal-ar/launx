@@ -6,11 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById('loader').style.display = 'flex'; // Mostrar el loader
       sessionStorage.setItem('loaderShown', true);
   }
-
-  // Oculta el loader después de 3 segundos
-  setTimeout(function() {
-      document.getElementById('loader').style.display = 'none'; // Ocultar el loader
-  }, 3000); // 3000 milisegundos = 3 segundos
 });
 
 window.onload = function() {
