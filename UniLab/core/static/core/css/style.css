@@ -58,7 +58,7 @@
 .header-area .main-header-area.sticky {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a64eee+0,3c35ce+100 */
   background: #111E6C;
- 
+
   /* IE6-9 */
 }
 
@@ -3025,7 +3025,7 @@ h3 {
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
 .courses_details_banner {
   background-image: url(../img/banner/bradcam2.png);
-  
+
   padding-top: 100px;
   padding-bottom: 100px;
   background-size: cover;
@@ -3112,7 +3112,7 @@ h3 {
 .courses_details_banner .course_text .hours .video i {
   color: #AD9EEB;
   font-size: 18px;
-  
+
 }
 
 /* line 62, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
@@ -3122,7 +3122,7 @@ h3 {
   padding-left: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
-  
+
 }
 
 /* line 75, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
@@ -3204,7 +3204,7 @@ h3 {
 /* line 114, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
 .courses_details_info .courses_sidebar .video_thumb img {
   width: 100%;
-  
+
 }
 
 /* line 117, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
@@ -3484,12 +3484,12 @@ h3 {
   width: 100%;
   position: absolute;
   display: block;
-  
+
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-  
+
 }
 
 
@@ -3501,7 +3501,7 @@ h3 {
   height: 275px;
   position: relative;
   display: block;
-  
+
 }
 
 .block21 {
@@ -3513,7 +3513,7 @@ h3 {
   position: relative;
   display: block;
   bottom: -15px;
-  
+
 }
 
 
@@ -6863,7 +6863,7 @@ h6 {
 }
 
 .univ {
-  
+
   background-size: cover;
   background-position: center center !important;
   height: 230px;
@@ -6929,8 +6929,8 @@ h6 {
 }
 
 /* .container {
-  margin-bottom: 40px; 
-  margin-top: 100px; 
+  margin-bottom: 40px;
+  margin-top: 100px;
 } */
 
 
@@ -6952,7 +6952,7 @@ h6 {
 }
 .pages_details {
   margin-left: 20px;
-  
+
 }
 
 .pages_details h2 {
@@ -7065,7 +7065,7 @@ h6 {
 
 .divider {
   display: flex;
-  
+
   &:before,
   &:after {
     content: "";
@@ -7077,7 +7077,7 @@ h6 {
 .line {
   align-items: center;
   margin: 1em 1em;
-  
+
   &:before,
   &:after {
     height: 1px;
@@ -7093,7 +7093,7 @@ h6 {
     }
   }
 
-  
+
 
 	.glow {
     &:before,
@@ -7102,11 +7102,11 @@ h6 {
       -webkit-filter: blur(5px);
       border-radius: 5px;
     }
-    
+
     &:before {
       background: linear-gradient(to right, blue, hotpink);
     }
-    
+
     &:after {
       background: linear-gradient(to left, blue, hotpink);
     }
@@ -7120,11 +7120,11 @@ h6 {
   line-height: 2em;
   color: white;
   background: black;
-  
+
   &:before {
     background: linear-gradient(to right, white, black);
   }
-  
+
   &:after {
     background: linear-gradient(to left, white, black);
 	}
@@ -7194,3 +7194,93 @@ h6 {
 }
 
 
+#ftco-loader {
+  position: fixed;
+  width: 96px;
+  height: 96px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24);
+  border-radius: 16px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .2s ease-out, visibility 0s linear .2s;
+  -o-transition: opacity .2s ease-out, visibility 0s linear .2s;
+  transition: opacity .2s ease-out, visibility 0s linear .2s;
+  z-index: 1000; }
+
+#ftco-loader.fullscreen {
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  background-color: #fff;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+#ftco-loader.show {
+  -webkit-transition: opacity .4s ease-out, visibility 0s linear 0s;
+  -o-transition: opacity .4s ease-out, visibility 0s linear 0s;
+  transition: opacity .4s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1; }
+
+#ftco-loader .circular {
+  -webkit-animation: loader-rotate 2s linear infinite;
+  animation: loader-rotate 2s linear infinite;
+  position: absolute;
+  left: calc(50% - 24px);
+  top: calc(50% - 24px);
+  display: block;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+#ftco-loader .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: loader-dash 1.5s ease-in-out infinite;
+  animation: loader-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round; }
+
+@-webkit-keyframes loader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes loader-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes loader-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -136px; } }
+
+@keyframes loader-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -136px; } }

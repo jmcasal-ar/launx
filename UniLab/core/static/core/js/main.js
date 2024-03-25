@@ -1,20 +1,15 @@
 (function ($) {
 "use strict";
 
-
-// Verificar si el loader ya se ha mostrado
-if (!sessionStorage.getItem('loaderShown')) {
-  // Mostrar el loader
-  document.getElementById('loader').style.display = 'flex';
-  
-  // Establecer el estado de mostrado del loader en sessionStorage
-  sessionStorage.setItem('loaderShown', true);
-  
-  // Ocultar el loader después de 3 segundos
-  setTimeout(function() {
-      document.getElementById('loader').style.display = 'none';
-  }, 3000); // 3000 milisegundos = 3 segundos
-}
+// loader
+var loader = function() {
+	setTimeout(function() {
+		if($('#ftco-loader').length > 0) {
+			$('#ftco-loader').removeClass('show');
+		}
+	}, 1);
+};
+loader();
 
 // TOP Menu Sticky
 $(window).on('scroll', function () {
@@ -106,11 +101,11 @@ autoplaySpeed: 800,
     $(this).addClass('active');
     event.preventDefault();
 	});
-  
+
   // wow js
   new WOW().init();
 
-  // counter 
+  // counter
   $('.counter').counterUp({
     delay: 10,
     time: 10000
@@ -306,7 +301,7 @@ $(document).ready(function() {
 
 
 
-//------- Mailchimp js --------//  
+//------- Mailchimp js --------//
 function mailChimp() {
   $('#mc_embed_signup').find('form').ajaxChimp();
 }
@@ -330,7 +325,7 @@ mailChimp();
             $("#search_input").focus();
         });
 
-})(jQuery);	
+})(jQuery);
 
 $(document).ready(function() {
   $('input[name="paymentMethod"]').change(function() {
