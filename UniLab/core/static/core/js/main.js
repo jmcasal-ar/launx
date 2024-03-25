@@ -331,3 +331,15 @@ $(document).ready(function() {
     // Lógica para procesar el pago con PayPal
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (!sessionStorage.getItem('loaderShown')) {
+      document.getElementById('loader').style.display = 'flex'; // Mostrar el loader
+      sessionStorage.setItem('loaderShown', true);
+  }
+});
+
+window.onload = function() {
+  document.getElementById('loader').style.display = 'none'; // Ocultar el loader
+};
