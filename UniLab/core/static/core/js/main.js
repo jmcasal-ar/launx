@@ -1,16 +1,19 @@
 (function ($) {
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
-  if (!sessionStorage.getItem('loaderShown')) {
-      document.getElementById('loader').style.display = 'flex'; // Mostrar el loader
-      sessionStorage.setItem('loaderShown', true);
-  }
-});
-
-window.onload = function() {
-  document.getElementById('loader').style.display = 'none'; // Ocultar el loader si la página se carga completamente
-};
+// Verificar si el loader ya se ha mostrado
+if (!sessionStorage.getItem('loaderShown')) {
+  // Mostrar el loader
+  document.getElementById('loader').style.display = 'flex';
+  
+  // Establecer el estado de mostrado del loader en sessionStorage
+  sessionStorage.setItem('loaderShown', true);
+  
+  // Ocultar el loader después de 3 segundos
+  setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+  }, 3000); // 3000 milisegundos = 3 segundos
+}
 
 // TOP Menu Sticky
 $(window).on('scroll', function () {
